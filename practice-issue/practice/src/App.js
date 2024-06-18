@@ -30,7 +30,7 @@ export default function App() {
   };
   return (
     <div>
-      <h2>숫자를 변하게 해봅시다!!</h2>
+      <h2>숫자를 변하게 해봅시다!</h2>
       <div
         style={{ margin: "10px", padding: "10px", border: "1px solid gray" }}
       >

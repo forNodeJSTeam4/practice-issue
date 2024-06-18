@@ -26,29 +26,23 @@ export default function App() {
     };
 
     const handleIncrease = () => {
-        setCount(count + 1);
+        setCount(count + 2);
     };
-    const handleDivideTen = () => {
-        const result = divideTen(count);
+    const handleDivide5 = () => {
+        const result = divideTen(count) *2;
         setCount(result);
     };
     return (
         <div>
             숫자를 변하게 해봅시다!
-            <div
-                style={{
-                    margin: "10px",
-                    padding: "10px",
-                    border: "1px solid gray",
-                }}
-            >
+            <div style={{ margin: '10px', padding: '10px', border: '1px solid gray' }}>
                 <div>{count}</div>
                 <div>곱셈 나눗셈에만 반응하는 my-score : {myScore}</div>
                 <button onClick={handleIncrease}>증가</button>
                 <button onClick={decreaseCount}>감소</button>{" "}
                 <button onClick={multiply2}>곱하기 10</button>
                 <button onClick={multiply}>곱하기 5</button>
-                <Button onClick={handleDivideTen}>나누기 10</Button>
+                <Button onClick={handleDivide5}>나누기 5</Button>
                 <h3>{visible ? "안녕하세요" : "반갑습니다."}</h3>
                 <button onClick={changeVisibleState}>greeting</button>
             </div>

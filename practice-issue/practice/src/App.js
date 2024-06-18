@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { additional } from "./additional.js";
 import calcStore from "./store/calcStore.js";
 import changeStore from "./store/changeStore.js";
-import "bootstrap/dist/css/bootstrap.min.css"
-import { Button } from 'react-bootstrap'
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "react-bootstrap";
 import Remote1 from "./component/Remote1.js";
 import Remote2 from "./component/Remote2.js";
 
 export default function App() {
     const [count, setCount] = useState(1);
-    const { divideTen, multiFive, myScore } = calcStore();
+    const { divideTen, multiFive, multiTen, myScore } = calcStore();
     const { visible, changeVisibleState } = changeStore();
 
     const decreaseCount = () => {
@@ -18,6 +18,10 @@ export default function App() {
 
     const multiply = () => {
         const result = multiFive(count);
+        setCount(result);
+    };
+    const multiply2 = () => {
+        const result = multiTen(count);
         setCount(result);
     };
 
@@ -35,7 +39,8 @@ export default function App() {
                 <div>{count}</div>
                 <div>곱셈 나눗셈에만 반응하는 my-score : {myScore}</div>
                 <button onClick={handleIncrease}>증가</button>
-                <button onClick={decreaseCount}>감소</button>
+                <button onClick={decreaseCount}>감소</button>{" "}
+                <button onClick={multiply2}>곱하기 10</button>
                 <button onClick={multiply}>곱하기 5</button>
                 <Button onClick={handleDivide5}>나누기 5</Button>
                 <h3>{visible ? "안녕하세요" : "반갑습니다."}</h3>

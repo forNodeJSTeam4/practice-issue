@@ -12,9 +12,9 @@ export default function App() {
     const { divideTen, multiFive, multiTen, myScore } = calcStore();
     const { visible, changeVisibleState } = changeStore();
 
-    const decreaseCount = () => {
-        setCount(count - 1);
-    };
+  const decreaseCount = () => {
+    setCount(count - 1);
+  };
 
     const multiply = () => {
         const result = multiFive(count);
@@ -50,4 +50,5 @@ export default function App() {
             <Remote2 count={count} />
         </div>
     );
+
 }
